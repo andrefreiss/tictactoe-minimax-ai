@@ -143,3 +143,65 @@ body {
   transform: scale(1.05);
   background: #16a34a;
 }
+
+@media (max-width: 850px) {
+  .dashboard {
+      flex-direction: column;
+      width: 95%;
+      height: auto;
+      min-height: 90vh;
+      margin: 20px 0;
+  }
+
+  .sidebar {
+      width: 100%;
+      height: auto;
+      border-right: none;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      padding: 1.5rem;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+  }
+
+  .logo { width: 100%; text-align: center; }
+  
+  .stat-card {
+      flex: 1;
+      min-width: 120px;
+      margin: 5px;
+  }
+
+  .sidebar p { display: none; }
+
+  .game-area {
+      padding: 2rem 1rem;
+  }
+
+  #status-text { font-size: 1.4rem; }
+
+  .board {
+      grid-template-columns: repeat(3, 85px);
+      grid-template-rows: repeat(3, 85px);
+      gap: 10px;
+  }
+
+  .cell {
+      width: 85px;
+      height: 85px;
+      font-size: 2.2rem;
+      border-radius: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .board {
+      grid-template-columns: repeat(3, 70px);
+      grid-template-rows: repeat(3, 70px);
+  }
+  .cell {
+      width: 70px;
+      height: 70px;
+      font-size: 1.8rem;
+  }
+}
