@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Lab | Strategic Minimax</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="logo">AI<span>LAB</span></div>
+            <div class="stat-card">
+                <label>Algoritmo</label>
+                <div>Minimax</div>
+            </div>
+            <div class="stat-card">
+                <label>Dificuldade</label>
+                <div style="color: #ef4444;">Imbatível</div>
+            </div>
+            <div class="stat-card">
+                <label>Status da IA</label>
+                <div id="ai-status">Pronta</div>
+            </div>
+
+        </aside>
+
+        <main class="game-area">
+            <header>
+                <h1 id="status-text">Sua vez.</h1>
+            </header>
+            
+            <div class="board" id="board"></div>
+
+            <button id="btn-next" class="btn-primary" style="display: none;" onclick="app.nextRound()">
+                Jogar Novamente
+            </button>
+        </main>
+    </div>
+
+    <script src="js/Game.js"></script>
+    <script src="js/Agent.js"></script>
+    <script src="js/ui-manager.js"></script>
+</body>
+</html>
