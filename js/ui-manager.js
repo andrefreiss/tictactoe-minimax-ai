@@ -3,6 +3,16 @@ class UIManager {
       this.game = new Game();
       this.agent = new Agent();
       this.render();
+      this.difficulty = 'hard';
+  }
+
+  setDifficulty(level) {
+      this.difficulty = level;
+      document.querySelectorAll('.btn-diff').forEach(btn => btn.classList.remove('active'));
+      const activeBtn = document.getElementById(`btn-${level}`);
+      if (activeBtn) activeBtn.classList.add('active');
+
+      this.nextRound();
   }
 
   render() {
@@ -33,18 +43,33 @@ class UIManager {
   }
 
   iaMove() {
-      const action = this.agent.getBestAction([...this.game.board]);
-      this.game.makeMove(action);
-      this.render();
+    const board = [...this.game.board];
+    let action;
 
-      const winner = this.game.checkWinner();
-      document.getElementById('ai-status').innerText = "Pronta";
-      
-      if (winner !== null) {
-          this.endGame(winner);
-      } else {
-          document.getElementById('status-text').innerText = "Sua vez.";
-      }
+    const rand = Math.random();
+    let errorChance = 0;
+
+    if (this.difficulty === 'easy') errorChance = 0.7;
+    else if (this.difficulty === 'medium') errorChance = 0.3;
+
+    if (rand < errorChance) {
+        const moves = board.map((v, i) => v === 0 ? i : null).filter(v => v !== null);
+        action = moves[Math.floor(Math.random() * moves.length)];
+    } else {
+        action = this.agent.getBestAction(board);
+    }
+
+    this.game.makeMove(action);
+    this.render();
+
+    const winner = this.game.checkWinner();
+    document.getElementById('ai-status').innerText = "Pronta";
+
+    if (winner !== null) {
+        this.endGame(winner);
+    } else {
+        document.getElementById('status-text').innerText = "Sua vez.";
+    }
   }
 
   endGame(winner) {

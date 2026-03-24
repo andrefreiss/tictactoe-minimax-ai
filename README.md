@@ -20,3 +20,10 @@ Diferente de modelos que aprendem por tentativa e erro, este motor utiliza o **M
 - **IA Estratégica**: Motor de decisão que antecipa as jogadas do usuário.
 - **Interface Neon**: Design focado em UX (User Experience) com feedback visual de "IA Calculando".
 - **Arquitetura Modular**: Código separado em Regras (Game), Estratégia (Agent) e Interface (UI).
+
+## 🎮 Níveis de Dificuldade
+O projeto agora conta com um sistema de seleção dinâmica de desafio:
+
+* **Imbatível (Hard):** Utiliza o algoritmo **Minimax** em 100% das jogadas. Através de busca exaustiva em árvore, a IA garante a jogada ótima, tornando a derrota da máquina impossível.
+* **Médio:** A IA utiliza o raciocínio estratégico em 70% das jogadas, introduzindo uma margem de erro de 30% para permitir oportunidades ao jogador.
+* **Fácil:** Focado em usuários iniciantes, a IA joga de forma aleatória em 70% do tempo, utilizando o Minimax apenas como suporte ocasional (30%).

@@ -16,8 +16,12 @@
                 <div>Minimax</div>
             </div>
             <div class="stat-card">
-                <label>Dificuldade</label>
-                <div style="color: #ef4444;">Imbatível</div>
+                <label>Nível de Dificuldade</label>
+                <div class="difficulty-selector">
+                    <button id="btn-hard" class="btn-diff active" onclick="app.setDifficulty('hard')">Imbatível</button>
+                    <button id="btn-medium" class="btn-diff" onclick="app.setDifficulty('medium')">Médio</button>
+                    <button id="btn-easy" class="btn-diff" onclick="app.setDifficulty('easy')">Fácil</button>
+                </div>
             </div>
             <div class="stat-card">
                 <label>Status da IA</label>
