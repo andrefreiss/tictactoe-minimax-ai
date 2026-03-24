@@ -13,7 +13,7 @@ O motor de IA está em sua versão **Imbatível**. Através de cálculos recursi
 ## 🤖 Como funciona o Algoritmo?
 Diferente de modelos que aprendem por tentativa e erro, este motor utiliza o **Minimax**:
 1. Ele simula recursivamente todas as jogadas possíveis a partir do estado atual.
-2. Atribui pontuações (+10 para vitória da IA, -10 para vitória do humano e 0 para empate).
+2. Atribui pontuações (+1 para vitória da IA, -1 para vitória do humano e 0 para empate).
 3. Escolhe o movimento que maximiza a pontuação da IA, assumindo que o humano também jogará de forma ótima para minimizar essa pontuação.
 
 ## 🎮 Funcionalidades Atuais
